@@ -2,7 +2,6 @@ package hackaton.android.com.ireport;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -11,7 +10,6 @@ public class SplashScreen extends AppCompatActivity{
     protected  int _splashTime = 100;
     private Thread splashThread;
     private ProgressBar mProg;
-    public int total = 0;
 
 
     @Override
@@ -36,7 +34,7 @@ public class SplashScreen extends AppCompatActivity{
                 finally {
                     Intent dashboard = new Intent(SplashScreen.this, Dashboard.class);
                     startActivity(dashboard);
-//                    finish();
+                    finish();
                 }
             }
         };
