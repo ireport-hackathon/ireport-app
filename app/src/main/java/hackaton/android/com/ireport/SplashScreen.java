@@ -1,11 +1,11 @@
 package hackaton.android.com.ireport;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreen extends Activity {
     protected  int _splashTime = 5000;
     private Thread splashThread;
 

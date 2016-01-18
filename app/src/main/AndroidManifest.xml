@@ -29,10 +29,10 @@
             android:name=".Instructions"
             android:label="@string/title_activity_instructions"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SplashScreen">
-            <intent-filter>
+        <activity android:name=".SplashScreen"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
