@@ -1,5 +1,6 @@
 package hackaton.android.com.ireport;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -23,18 +24,9 @@ public class Dashboard extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.nav_drawer_open, R.string.nav_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -50,13 +42,6 @@ public class Dashboard extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.dashboard, menu);
-        return true;
     }
 
     @Override
@@ -80,19 +65,25 @@ public class Dashboard extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        Intent intent = new Intent();
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        if (id == R.id.nav_add_report) {
+            // Start AddReport activity
+            intent.setClass(this, AddReport.class);
+        } else if (id == R.id.nav_view_report) {
+            // Start ViewReport activity
+            intent.setClass(this, ViewReports.class);
+        } else if (id == R.id.nav_view_instruction) {
+            // Start Instruction activity
+            intent.setClass(this, Instructions.class);
+        } else if (id == R.id.nav_view_profile) {
+            // Start Profile activity
+            intent.setClass(this, ViewReports.class);
+        } else if (id == R.id.nav_logout) {
 
         }
+
+        startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

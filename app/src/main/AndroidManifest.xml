@@ -18,6 +18,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddReport"
+            android:label="@string/title_activity_add_report"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ViewReports"
+            android:label="@string/title_activity_view_report"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Profile"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Instructions"
+            android:label="@string/title_activity_instructions"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
