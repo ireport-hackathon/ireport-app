@@ -2,6 +2,8 @@ package hackaton.android.com.ireport;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,16 +11,60 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
+import com.google.android.gms.location.LocationServices;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class AddReport extends AppCompatActivity {
-    TextView txtDate, txtTime;
+public class AddReport extends AppCompatActivity implements ConnectionCallbacks, OnConnectionFailedListener{
+    TextView txtDate, txtTime, txtLocation;
     Calendar calendar = Calendar.getInstance();
     SimpleDateFormat sdf;
+    GoogleApiClient mGoogleApiClient;
+
+    @Override
+    public void onConnectionSuspended(int n){
+        Toast.makeText(this, "Location connection suspended", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onConnected(Bundle connectionHint) {
+
+        Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                mGoogleApiClient);
+        if (mLastLocation != null) {
+            String mLatitudeText = String.valueOf(mLastLocation.getLatitude());
+            String mLongitudeText = String.valueOf(mLastLocation.getLongitude());
+            txtLocation.setText(String.format("%s/%s", mLatitudeText, mLongitudeText));
+            Toast.makeText(this, mLatitudeText, Toast.LENGTH_SHORT).show();
+        }else{
+            txtLocation = (TextView)findViewById(R.id.txtLocation);
+            txtLocation.setText("Location Not Found.\nClick here to turn Location services");
+            txtLocation.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent callGPSSettingIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivityForResult(callGPSSettingIntent, 1);
+                }
+            });
+
+        }
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult){
+        Toast.makeText(this, connectionResult.toString(), Toast.LENGTH_SHORT).show();
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +75,25 @@ public class AddReport extends AppCompatActivity {
         main_actions();
         setCurrentDate();
         setCurrentTime();
+
+
+        if (mGoogleApiClient == null) {
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
+    }
+
+    protected void onStart() {
+        mGoogleApiClient.connect();
+        super.onStart();
+    }
+
+    protected void onStop() {
+        mGoogleApiClient.disconnect();
+        super.onStop();
     }
 
     private void main_actions(){
@@ -44,6 +109,13 @@ public class AddReport extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 timepicker();
+            }
+        });
+        txtLocation = (TextView)findViewById(R.id.txtLocation);
+        txtLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onStart();
             }
         });
     }

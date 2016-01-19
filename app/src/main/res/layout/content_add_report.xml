@@ -114,4 +114,14 @@
         android:layout_below="@+id/txtDate"
         android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ayala"
+        android:id="@+id/txtLocation"
+        android:textColor="#1d9de7"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
