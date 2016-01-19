@@ -23,6 +23,7 @@ public class Dashboard extends AppCompatActivity
         setContentView(R.layout.activity_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle(R.string.title_dashboard);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -69,7 +70,7 @@ public class Dashboard extends AppCompatActivity
 
         if (id == R.id.nav_add_report) {
             // Start AddReport activity
-            intent.setClass(this, AddReport.class);
+            intent.setClass(this, Dashboard.class);
         } else if (id == R.id.nav_view_report) {
             // Start ViewReport activity
             intent.setClass(this, ViewReports.class);
