@@ -11,8 +11,7 @@
         <activity
             android:name=".Dashboard"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AddReport"
             android:label="@string/title_activity_add_report"
@@ -29,14 +28,18 @@
             android:name=".Instructions"
             android:label="@string/title_activity_instructions"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SplashScreen"
+        <activity
+            android:name=".SplashScreen"
             android:theme="@style/AppFullScreenTheme">
-            <!--android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">-->
-        <intent-filter>
+
+            <!-- android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"> -->
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Login"></activity>
     </application>
 
 </manifest>
