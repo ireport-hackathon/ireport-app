@@ -83,7 +83,7 @@ public class Dashboard extends AppCompatActivity
 
         }
 
-        startActivity(intent);
+//        startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

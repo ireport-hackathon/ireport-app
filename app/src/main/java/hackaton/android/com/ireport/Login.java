@@ -45,7 +45,7 @@ public class Login extends AppCompatActivity implements
         // Button listeners
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.sign_out_button).setOnClickListener(this);
-        findViewById(R.id.disconnect_button).setOnClickListener(this);
+        findViewById(R.id.go_to_dashboard).setOnClickListener(this);
 
         // [START configure_signin]
         // Configure sign-in to request the user's ID, email address, and basic
@@ -202,6 +202,8 @@ public class Login extends AppCompatActivity implements
         }
     }
 
+
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -211,9 +213,13 @@ public class Login extends AppCompatActivity implements
             case R.id.sign_out_button:
                 signOut();
                 break;
-            case R.id.disconnect_button:
-                revokeAccess();
+            case R.id.go_to_dashboard:
+                home();
                 break;
         }
+    }
+
+    private void home(){
+        startActivity(new Intent(this, Dashboard.class));
     }
 }
