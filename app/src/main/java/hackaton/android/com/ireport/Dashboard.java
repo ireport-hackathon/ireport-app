@@ -104,7 +104,7 @@ public class Dashboard extends AppCompatActivity
             intent.setClass(this, Instructions.class);
         } else if (id == R.id.nav_view_profile) {
             // Start Profile activity
-            intent.setClass(this, ViewReports.class);
+            intent.setClass(this, Profile.class);
         } else if (id == R.id.nav_logout) {
 
         }
