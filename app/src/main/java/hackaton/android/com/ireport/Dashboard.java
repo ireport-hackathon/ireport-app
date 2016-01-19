@@ -69,7 +69,7 @@ public class Dashboard extends AppCompatActivity
 
         if (id == R.id.nav_add_report) {
             // Start AddReport activity
-            intent.setClass(this, AddReport.class);
+            startActivity(intent.setClass(this, AddReport.class));
         } else if (id == R.id.nav_view_report) {
             // Start ViewReport activity
             intent.setClass(this, ViewReports.class);
