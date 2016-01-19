@@ -32,7 +32,7 @@ public class SplashScreen extends AppCompatActivity{
                     Toast.makeText(SplashScreen.this, e.toString(), Toast.LENGTH_LONG).show();
                 }
                 finally {
-                    Intent dashboard = new Intent(SplashScreen.this, Dashboard.class);
+                    Intent dashboard = new Intent(SplashScreen.this, Login.class);
                     startActivity(dashboard);
                     finish();
                 }
