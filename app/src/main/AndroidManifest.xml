@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> <!-- providing permission for both providers -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> <!-- used when we use network location  -->
     <uses-permission android:name="android.permission.INTERNET"/> <!-- permission is must for the use of network provide -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
