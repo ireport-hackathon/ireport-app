@@ -8,7 +8,19 @@
     <string name="nav_drawer_instructions">Instructions</string>
     <string name="nav_drawer_view_profile">Profile</string>
     <string name="about">About</string>
+    <string name="title_dashboard">Dashboard</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="action_entries">
+        <item>Report an Issue</item>
+        <item>Provide Feedback</item>
+    </string-array>
+    <string-array name="gov_agencies">
+        <item>COMELEC</item>
+        <item>LTFRB</item>
+        <item>DSWD</item>
+    </string-array>
+
     <string name="title_activity_add_report">AddReport</string>
     <string name="title_activity_view_report">ViewReport</string>
     <string name="title_activity_profile">ProfileActivity</string>
@@ -71,3 +83,4 @@
          from https://console.developers.google.com/ -->
     <string name="server_client_id">YOUR_SERVER_CLIENT_ID</string>
 </resources>
+
