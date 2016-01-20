@@ -12,8 +12,4 @@
     tools:context=".Profile"
     tools:showIn="@layout/activity_profile">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile" />
 </RelativeLayout>

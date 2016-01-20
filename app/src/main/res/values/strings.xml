@@ -63,7 +63,9 @@
     <string name="dswd">DSWD</string>
     <string name="select_agency">Select Government Office:</string>
     <string name="select_action">Select Action:</string>
-
+    <string name="report_issue">Report an Issue</string>
+    <string name="provide_feedback">Provide Feedback</string>
+    <string name="proceed_button">Proceed</string>
 
     <string name="no_address_found">No Address found. </string>
     <string name="invalid_lat_long_used">Invalid Lat_lng used </string>

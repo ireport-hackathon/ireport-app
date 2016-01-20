@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Select Government Agency:"
+        android:text="@string/select_agency"
         android:id="@+id/textView2" />
 
     <RadioGroup
@@ -23,21 +23,21 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="COMELEC"
+            android:text="@string/comelec"
             android:id="@+id/agency_comelec"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LTFRB"
+            android:text="@string/ltfrb"
             android:id="@+id/agency_ltfrb"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DSWD"
+            android:text="@string/dswd"
             android:id="@+id/agency_dswd"
             android:checked="false" />
     </RadioGroup>
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Select Action:"
+        android:text="@string/select_action"
         android:id="@+id/textView3" />
 
     <RadioGroup
@@ -58,13 +58,13 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Report an Issue"
+            android:text="@string/report_issue"
             android:id="@+id/action_issue" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Provide Feedback"
+            android:text="@string/provide_feedback"
             android:id="@+id/action_feedback" />
     </RadioGroup>
 
@@ -72,7 +72,7 @@
         android:layout_width="180dp"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
-        android:text="Proceed"
+        android:text="@string/proceed_button"
         android:id="@+id/button_proceed"
         android:layout_gravity="center_horizontal"
         android:textColor="#FFFFFF"

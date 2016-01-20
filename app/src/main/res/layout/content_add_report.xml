@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Report/Feedback"
+            android:text="@string/add_report"
             android:id="@+id/textView3" />
 
         <TextView
