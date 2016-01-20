@@ -12,10 +12,12 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -176,6 +178,38 @@ public class AddReport extends AppCompatActivity implements ConnectionCallbacks,
                 onStart();
             }
         });
+
+        Button btnSend = (Button)findViewById(R.id.btnSend);
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Mail m = new Mail("ireport.hackaton@gmail.com", "ireport1");
+                Toast.makeText(AddReport.this, "BUSABOS", Toast.LENGTH_LONG).show();
+                String[] toArr = {"ireport.hackaton@gmail.com"};
+                m.setTo(toArr);
+                m.setFrom("ireport.hackaton@gmail.com");
+                m.setSubject("This is an email sent using my Mail JavaMail wrapper from an Android device.");
+                m.setBody("Email body.");
+
+                try {
+//                    m.addAttachment("/sdcard/filelocation");
+
+                    SendMail send = new SendMail(m);
+                    send.execute();
+                    while(send.getStatus() != AsyncTask.Status.FINISHED){
+                        Toast.makeText(AddReport.this, send.getStatus().toString(), Toast.LENGTH_LONG).show();
+                    }
+
+                    if (send.getStatus() == AsyncTask.Status.FINISHED) {
+                        Toast.makeText(AddReport.this, "Email was sent successfully.", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(AddReport.this, "Email was not sent.", Toast.LENGTH_LONG).show();
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(AddReport.this, "There was a problem sending the email.", Toast.LENGTH_LONG).show();
+                    Log.e("MailApp", "Could not send email", e);
+                }
+            }
+        });
     }
 
     private void setCurrentTime(){
@@ -264,5 +298,25 @@ public class AddReport extends AppCompatActivity implements ConnectionCallbacks,
         cursor.moveToFirst();
         int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
         return cursor.getString(idx);
+    }
+
+    public class SendMail extends AsyncTask<String, Integer, Void> {
+
+        private Mail mail;
+
+        public SendMail(Mail m){
+            this.mail = m;
+        }
+
+        @Override
+        protected Void doInBackground(String... params) {
+            try {
+                mail.send();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 }
