@@ -145,8 +145,9 @@
             android:layout_width="121dp"
             android:layout_height="162dp"
             android:id="@+id/imageView"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/button_get_loc"/>
 
     </RelativeLayout>
 </ScrollView>
