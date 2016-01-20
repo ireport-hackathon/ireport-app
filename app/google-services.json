@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_id": "ireport-1",
+    "project_number": "1065934148734",
+    "name": "iReport"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065934148734:android:0a2a5d7542b03d47",
+        "client_id": "android:hackathon.android.com.ireport",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "hackathon.android.com.ireport"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065934148734:android:c5f91e6b9b7b6d57",
+        "client_id": "android:hackaton.android.com.ireport",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "hackaton.android.com.ireport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065934148734-tescov21rjbb9hhf87ukm52h7jugaeva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hackaton.android.com.ireport",
+            "certificate_hash": "B790F742043C2F6D20B9FC41D4BBD14DB2BB95D2"
+          }
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

@@ -95,7 +95,7 @@ public class Dashboard extends AppCompatActivity
 
         if (id == R.id.nav_add_report) {
             // Start AddReport activity
-            intent.setClass(this, Dashboard.class);
+            startActivity(intent.setClass(this, Dashboard.class));
         } else if (id == R.id.nav_view_report) {
             // Start ViewReport activity
             intent.setClass(this, ViewReports.class);
@@ -109,7 +109,7 @@ public class Dashboard extends AppCompatActivity
 
         }
 
-        startActivity(intent);
+//        startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
