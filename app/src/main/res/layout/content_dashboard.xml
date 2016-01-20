@@ -18,6 +18,7 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:checkedButton="@+id/agency_comelec"
         android:id="@+id/radio_group_agency">
         <RadioButton
             android:layout_width="wrap_content"
@@ -52,6 +53,7 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:checkedButton="@+id/action_issue"
         android:id="@+id/radio_group_action">
         <RadioButton
             android:layout_width="wrap_content"

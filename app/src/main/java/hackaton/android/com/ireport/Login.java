@@ -123,7 +123,15 @@ public class Login extends AppCompatActivity implements
         if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
-            mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
+            String strName = acct.getDisplayName();
+            mStatusTextView.setText(getString(R.string.signed_in_fmt, strName));
+
+//            Update name and email address in navigation drawer
+            TextView name = (TextView) findViewById(R.id.name);
+            name.setText(strName);
+            TextView email = (TextView) findViewById(R.id.email_add);
+            email.setText(acct.getEmail());
+
             updateUI(true);
         } else {
             // Signed out, show unauthenticated UI.

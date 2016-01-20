@@ -2,29 +2,15 @@
     <string name="app_name">IReport</string>
     <string name="nav_drawer_open">Open navigation drawer</string>
     <string name="nav_drawer_close">Close navigation drawer</string>
-    <string name="nav_drawer_add">Add Report/Feedback</string>
-    <string name="nav_drawer_view">View My Reports</string>
-    <string name="nav_drawer_logout">Logout</string>
-    <string name="nav_drawer_instructions">Instructions</string>
-    <string name="nav_drawer_view_profile">Profile</string>
+    <string name="add_report">Add Report/Feedback</string>
+    <string name="view_report">View My Reports</string>
+    <string name="logout">Logout</string>
+    <string name="instructions">Instructions</string>
+    <string name="profile">Profile</string>
     <string name="about">About</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="action_settings">Settings</string>
 
-    <string-array name="action_entries">
-        <item>Report an Issue</item>
-        <item>Provide Feedback</item>
-    </string-array>
-    <string-array name="gov_agencies">
-        <item>COMELEC</item>
-        <item>LTFRB</item>
-        <item>DSWD</item>
-    </string-array>
-
-    <string name="title_activity_add_report">AddReport</string>
-    <string name="title_activity_view_report">ViewReport</string>
-    <string name="title_activity_profile">ProfileActivity</string>
-    <string name="title_activity_instructions">InstructionsActivity</string>
     <string name="title_text">Google Sign-In\nQuickstart</string>
 
     <!-- Sign-in status messages -->
@@ -71,6 +57,12 @@
     <string name="time">TIME: </string>
     <string name="location">LOCATION: </string>
     <string name="send">Send</string>
+
+    <string name="comelec">COMELEC</string>
+    <string name="ltfrb">LTFRB</string>
+    <string name="dswd">DSWD</string>
+    <string name="select_agency">Select Government Office:</string>
+    <string name="select_action">Select Action:</string>
 
 
     <string name="no_address_found">No Address found. </string>

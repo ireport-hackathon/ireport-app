@@ -5,15 +5,15 @@
         <item
             android:id="@+id/nav_add_report"
             android:icon="@android:drawable/ic_input_add"
-            android:title="@string/nav_drawer_add" />
+            android:title="@string/add_report" />
         <item
             android:id="@+id/nav_view_report"
             android:icon="@android:drawable/ic_menu_view"
-            android:title="@string/nav_drawer_view" />
+            android:title="@string/view_report" />
         <item
             android:id="@+id/nav_view_instruction"
             android:icon="@android:drawable/ic_menu_help"
-            android:title="@string/nav_drawer_instructions" />
+            android:title="@string/instructions" />
     </group>
 
     <item android:title="Account">
@@ -21,11 +21,11 @@
             <item
                 android:id="@+id/nav_view_profile"
                 android:icon="@android:drawable/ic_menu_view"
-                android:title="@string/nav_drawer_view_profile" />
+                android:title="@string/profile" />
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="@string/nav_drawer_logout" />
+                android:title="@string/logout" />
         </menu>
     </item>
 
