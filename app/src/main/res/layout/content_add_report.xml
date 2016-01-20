@@ -24,10 +24,12 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/title"
         android:id="@+id/txtTitle"
+        android:layout_marginTop="41dp"
+        android:drawableLeft="@drawable/ic_turned_in_not_24dp"
+        android:drawablePadding="5dp"
         android:layout_below="@+id/textView3"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_marginTop="41dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,7 +40,9 @@
         android:layout_below="@+id/txtTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="47dp" />
+        android:layout_marginTop="47dp"
+        android:drawableLeft="@drawable/ic_insert_comment_24dp"
+        android:drawablePadding="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,7 +53,9 @@
         android:layout_marginTop="29dp"
         android:layout_below="@+id/editText2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:drawableLeft="@drawable/ic_schedule_24dp"
+        android:drawablePadding="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -59,7 +65,9 @@
         android:id="@+id/textView4"
         android:layout_below="@+id/txtTime"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:drawableLeft="@drawable/ic_pin_drop_24dp"
+        android:drawablePadding="5dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -68,9 +76,10 @@
         android:ems="10"
         android:id="@+id/editText"
         android:layout_alignTop="@+id/txtTitle"
-        android:layout_toRightOf="@+id/textView4"
         android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2" />
+        android:layout_alignEnd="@+id/editText2"
+        android:layout_toRightOf="@+id/txtTitle"
+        android:layout_toEndOf="@+id/txtTitle" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -91,8 +100,8 @@
         android:id="@+id/txtDate"
         android:textColor="#1d9de7"
         android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4" />
+        android:layout_alignLeft="@+id/txtTime"
+        android:layout_alignStart="@+id/txtTime" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -103,7 +112,16 @@
         android:textColor="#1d9de7"
         android:layout_marginTop="27dp"
         android:layout_below="@+id/txtDate"
-        android:layout_toRightOf="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4" />
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ayala"
+        android:id="@+id/txtLocation"
+        android:textColor="#1d9de7"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -58,6 +58,14 @@
     <string name="when">WHEN: </string>
     <string name="where">WHERE: </string>
 
+
+    <string name="no_address_found">No Address found. </string>
+    <string name="invalid_lat_long_used">Invalid lat_lng </string>
+    <string name="address_found">Address found. </string>
+
+
+    <string name="service_not_available">Location Service not available: </string>
+
     <!-- TODO(user): replace with your real server client ID -->
     <!-- Server Client ID.  This should be a valid Web OAuth 2.0 Client ID obtained
          from https://console.developers.google.com/ -->
