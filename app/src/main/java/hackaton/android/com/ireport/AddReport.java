@@ -3,6 +3,8 @@ package hackaton.android.com.ireport;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,16 +21,21 @@ import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationServices;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+
 
 public class AddReport extends AppCompatActivity implements ConnectionCallbacks, OnConnectionFailedListener{
     TextView txtDate, txtTime, txtLocation;
     Calendar calendar = Calendar.getInstance();
     SimpleDateFormat sdf;
     GoogleApiClient mGoogleApiClient;
+
 
     @Override
     public void onConnectionSuspended(int n){
@@ -41,10 +48,9 @@ public class AddReport extends AppCompatActivity implements ConnectionCallbacks,
         Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
         if (mLastLocation != null) {
-            String mLatitudeText = String.valueOf(mLastLocation.getLatitude());
-            String mLongitudeText = String.valueOf(mLastLocation.getLongitude());
-            txtLocation.setText(String.format("%s/%s", mLatitudeText, mLongitudeText));
-            Toast.makeText(this, mLatitudeText, Toast.LENGTH_SHORT).show();
+            Double lat = mLastLocation.getLatitude();
+            Double lng = mLastLocation.getLongitude();
+            getMyLocationAddress(lng,lat);
         }else{
             txtLocation = (TextView)findViewById(R.id.txtLocation);
             txtLocation.setText("Location Not Found.\nClick here to turn Location services");
@@ -59,11 +65,35 @@ public class AddReport extends AppCompatActivity implements ConnectionCallbacks,
         }
     }
 
+    public void getMyLocationAddress(Double lng, Double lat) {
+
+        Geocoder geocoder= new Geocoder(this, Locale.ENGLISH);
+
+        try {
+            List<Address> addresses = geocoder.getFromLocation(lng, lat, 1);
+            if(addresses != null) {
+                Address fetchedAddress = addresses.get(0);
+                StringBuilder strAddress = new StringBuilder();
+                for(int i=0; i<fetchedAddress.getMaxAddressLineIndex(); i++) {
+                    strAddress.append(fetchedAddress.getAddressLine(i)).append("\n");
+                }
+                txtLocation.setText(strAddress.toString());
+            }
+            else
+                txtLocation.setText(R.string.no_address_found);
+        }
+        catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(),"Could not get address..!", Toast.LENGTH_LONG).show();
+        }
+
+    }
+
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult){
         Toast.makeText(this, connectionResult.toString(), Toast.LENGTH_SHORT).show();
     }
-
 
 
     @Override
