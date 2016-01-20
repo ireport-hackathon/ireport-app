@@ -67,13 +67,16 @@
     <string name="go_to_dashboard">Go to Home</string>
     <string name="title">TITLE: </string>
     <string name="description">DESCRIPTION: </string>
-    <string name="when">WHEN: </string>
-    <string name="where">WHERE: </string>
+    <string name="date">DATE: </string>
+    <string name="time">TIME: </string>
+    <string name="location">LOCATION: </string>
+    <string name="send">Send</string>
 
 
     <string name="no_address_found">No Address found. </string>
     <string name="invalid_lat_long_used">Invalid Lat_lng used </string>
     <string name="address_found">Address found. </string>
+    <string name="attach_image">Capture Image </string>
 
 
     <string name="service_not_available">Location Service not available: </string>

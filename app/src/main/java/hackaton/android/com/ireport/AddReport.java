@@ -127,8 +127,7 @@ public class AddReport extends AppCompatActivity implements ConnectionCallbacks,
         setCurrentTime();
 
         imageView = (ImageView) findViewById(R.id.imageView);
-        Button captureButton = (Button) findViewById(R.id.button_get_loc);
-        captureButton.setOnClickListener(new View.OnClickListener() {
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);

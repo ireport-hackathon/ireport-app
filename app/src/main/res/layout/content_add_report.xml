@@ -52,26 +52,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/when"
+            android:text="@string/date"
             android:id="@+id/textView2"
             android:layout_marginTop="29dp"
             android:layout_below="@+id/editText2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:drawableLeft="@drawable/ic_schedule_24dp"
+            android:drawableLeft="@drawable/ic_event_note_24dp"
             android:drawablePadding="5dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/where"
+            android:text="@string/location"
             android:id="@+id/textView4"
+            android:drawableLeft="@drawable/ic_pin_drop_24dp"
+            android:drawablePadding="5dp"
+            android:layout_marginTop="28dp"
             android:layout_below="@+id/txtTime"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:drawableLeft="@drawable/ic_pin_drop_24dp"
-            android:drawablePadding="5dp"/>
+            android:layout_alignParentStart="true" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -79,11 +80,11 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editText"
-            android:layout_alignTop="@+id/txtTitle"
+            android:layout_below="@+id/txtTitle"
+            android:layout_alignLeft="@+id/editText2"
+            android:layout_alignStart="@+id/editText2"
             android:layout_alignRight="@+id/editText2"
-            android:layout_alignEnd="@+id/editText2"
-            android:layout_toRightOf="@+id/txtTitle"
-            android:layout_toEndOf="@+id/txtTitle" />
+            android:layout_alignEnd="@+id/editText2" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -92,9 +93,10 @@
             android:ems="10"
             android:id="@+id/editText2"
             android:layout_below="@+id/txtDescription"
-            android:layout_toRightOf="@+id/textView4"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/textView6"
+            android:layout_alignStart="@+id/textView6" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -126,28 +128,53 @@
             android:id="@+id/txtLocation"
             android:textColor="#1d9de7"
             android:layout_below="@+id/textView4"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="45dp"
-            android:text="Capture Image"
-            android:id="@+id/button_get_loc"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:background="@drawable/buttonshape"
-            android:layout_marginTop="64dp"
-            android:layout_below="@+id/txtLocation"
-            android:layout_alignRight="@+id/txtLocation"
-            android:layout_alignEnd="@+id/txtLocation" />
+            android:layout_alignRight="@+id/editText2"
+            android:layout_alignEnd="@+id/editText2"
+            android:layout_toRightOf="@+id/textView6"
+            android:layout_toEndOf="@+id/textView6" />
 
         <ImageView
             android:layout_width="121dp"
             android:layout_height="162dp"
             android:id="@+id/imageView"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/button_get_loc"/>
+            android:src="@drawable/ic_photo_camera_24dp"
+            android:layout_below="@+id/txtLocation"
+            android:layout_alignLeft="@+id/textView6"
+            android:layout_alignStart="@+id/textView6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/attach_image"
+            android:id="@+id/textView5"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_toRightOf="@+id/textView3"
+            android:layout_toEndOf="@+id/textView3"
+            android:layout_marginBottom="64dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/time"
+            android:id="@+id/textView6"
+            android:drawableLeft="@drawable/ic_event_note_24dp"
+            android:drawablePadding="5dp"
+            android:layout_above="@+id/textView4"
+            android:layout_alignRight="@+id/txtTitle"
+            android:layout_alignEnd="@+id/txtTitle" />
+
+        <Button
+            android:id="@+id/sign_out_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/send"
+            android:theme="@style/ThemeOverlay.MyDarkButton"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 </ScrollView>
