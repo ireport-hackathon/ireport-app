@@ -70,7 +70,7 @@ public class AddReport extends AppCompatActivity implements ConnectionCallbacks,
         Geocoder geocoder= new Geocoder(this, Locale.ENGLISH);
 
         try {
-            List<Address> addresses = geocoder.getFromLocation(lng, lat, 1);
+            List<Address> addresses = geocoder.getFromLocation(lat, lng, 1);
             if(addresses != null) {
                 Address fetchedAddress = addresses.get(0);
                 StringBuilder strAddress = new StringBuilder();
@@ -86,6 +86,10 @@ public class AddReport extends AppCompatActivity implements ConnectionCallbacks,
             // TODO Auto-generated catch block
             e.printStackTrace();
             Toast.makeText(getApplicationContext(),"Could not get address..!", Toast.LENGTH_LONG).show();
+        }
+        catch (IllegalArgumentException illegalArgumentException) {
+            // Catch invalid latitude or longitude values.
+            Toast.makeText(this, illegalArgumentException.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
     }
